@@ -1,53 +1,51 @@
-import styled from "styled-components";
-import PageThree from "../pages/PageThree.tsx";
-import PageOne from "../pages/PageOne.tsx";
-import PageTwo from "../pages/PageTwo.tsx";
-import {Navigate, Route, Routes} from "react-router-dom";
+import Nike from "../pages/Nike.tsx";
+import Adidas from "../pages/Adidas.tsx";
+import Puma from "../pages/Puma.tsx";
+import {Navigate, NavLink, Route, Routes} from "react-router-dom";
 import Error404 from "../pages/Error404.tsx";
+import {S} from '../pages/_styles.ts'
+import Model from "../model/Model.tsx";
+
+export type SneackerItem = {
+    model: string;
+    collection: string;
+    price: string;
+    picture: string;
+    id: number;
+}
+//path
+export const PATH = {
+    ADIDAS: '/adidas',
+    PUMA: '/puma',
+    NIKE: '/nike',
+    ERROR: '/notfound',
+    MODEL: '/adidas/:id'
+} as const;
 
 const MainPage = () => {
     return (
-        <MainStyled>
-            <NavContainer>
-                <div>Adidas</div>
-                <div>Puma</div>
-                <div>Nike</div>
-            </NavContainer>
-            <Description>
+        <S.MainStyled>
+            <S.NavContainer>
+                <S.NavWrapper><NavLink
+                    to={PATH.ADIDAS}> Adidas</NavLink></S.NavWrapper>
+                <S.NavWrapper><NavLink
+                    to={PATH.PUMA}> Puma</NavLink></S.NavWrapper>
+                <S.NavWrapper><NavLink
+                    to={PATH.NIKE}> Nike</NavLink></S.NavWrapper>
+            </S.NavContainer>
+            <S.Description>
                 <Routes>
-                    <Route path='/adidas' element={<PageOne/>}/>
-                    <Route path='/puma' element={<PageTwo/>}/>
-                    <Route path='/nike' element={<PageThree/>}/>
-                    <Route path='/notfound' element={<Error404/>}/>
-                    <Route path='*' element={<Navigate to='/notfound'/>}/>
-                    <Route path='/' element={<Navigate to='/adidas'/>}/>
+                    <Route path={PATH.ADIDAS} element={<Adidas />}/>
+                    <Route path={PATH.PUMA} element={<Puma/>}/>
+                    <Route path={PATH.NIKE} element={<Nike/>}/>
+                    <Route path={PATH.ERROR} element={<Error404/>}/>
+                    <Route path='*' element={<Error404/>}/>
+                    <Route path='/' element={<Navigate to={PATH.ADIDAS}/>}/>
+                    <Route path={'/adidas/:id'} element={<Model/>}></Route>
                 </Routes>
-            </Description>
-        </MainStyled>
+            </S.Description>
+        </S.MainStyled>
     );
 };
-const MainStyled = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: white
 
-`
-const NavContainer = styled.div`
-    height: 100%;
-    background-color: white;
-    width: 30%;
-`
-const Description = styled.div`
-    height: 80vh;
-    background-color: black;
-    width: 70%;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-`
 export default MainPage;

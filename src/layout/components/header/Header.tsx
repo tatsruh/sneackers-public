@@ -3,7 +3,10 @@ import styled from "styled-components";
 const Header = () => {
     return (
         <HeaderStyled>
-            HEADER
+            <ShopName>
+                Sneacker Shop
+            </ShopName>
+            <span>Est 2012</span>
         </HeaderStyled>
     );
 };
@@ -13,8 +16,15 @@ const HeaderStyled = styled.header`
     height: 10vh;
     color: white;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-sizing: border-box;
+    align-items: center;
+`
+const ShopName = styled.span`
+    color: white;
+    font-size: 24px;
 `
 
 export default Header;
