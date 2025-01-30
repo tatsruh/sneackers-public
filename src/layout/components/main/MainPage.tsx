@@ -7,6 +7,7 @@ import {S} from '../pages/_styles.ts'
 import Model from "../model/Model.tsx";
 import {Prices} from "../prices/Prices.tsx";
 import Navbar from "../navigation/Navbar.tsx";
+import {useState} from "react";
 
 export type SneackerItem = {
     model: string;
@@ -24,10 +25,15 @@ export const PATH = {
     PRICE: '/price',
 } as const;
 
-const MainPage = () => {
+type Props = {
+    menu: boolean;
+}
+
+const MainPage = ({menu}: Props) => {
+
     return (
         <S.MainStyled>
-            <Navbar/>
+            {menu && (<Navbar/>)}
             <S.Description>
                 <Routes>
                     <Route path={PATH.ADIDAS} element={<Adidas />}/>

@@ -5,14 +5,16 @@ import {PATH} from "../main/MainPage.tsx";
 const Navbar = () => {
     return (
         <S.NavContainer>
-            <S.NavWrapper><NavLink
-                to={PATH.ADIDAS}> Adidas</NavLink></S.NavWrapper>
-            <S.NavWrapper><NavLink
-                to={PATH.PUMA}> Puma</NavLink></S.NavWrapper>
-            <S.NavWrapper><NavLink
-                to={PATH.NIKE}> Nike</NavLink></S.NavWrapper>
-            <S.NavWrapper><NavLink
-                to={PATH.PRICE}>Prices</NavLink></S.NavWrapper>
+            <div>
+                <S.NavWrapper><NavLink
+                    to={PATH.ADIDAS}> Adidas</NavLink></S.NavWrapper>
+                <S.NavWrapper><NavLink
+                    to={PATH.PUMA}> Puma</NavLink></S.NavWrapper>
+                <S.NavWrapper><NavLink
+                    to={PATH.NIKE}> Nike</NavLink></S.NavWrapper>
+                <S.NavWrapper><NavLink
+                    to={PATH.PRICE}>Prices</NavLink></S.NavWrapper></div>
+
         </S.NavContainer>
     );
 };

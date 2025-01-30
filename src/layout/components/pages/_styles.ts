@@ -6,7 +6,7 @@ const MainStyled = styled.div`
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 80%;
     background-color: white
 
 `
@@ -15,6 +15,9 @@ const NavContainer = styled.div`
     background-color: white;
     width: 30%;
     max-width:300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `
 const NavWrapper = styled.div`
     height: 70px;
@@ -68,12 +71,16 @@ const ModelContainer = styled.div`
         font-weight: 400;
     }
 `
+const Icon = styled.img `
+width: 50px;
+height: 50px;`
 
 export const S = {
     MainStyled,
         NavContainer,
         NavWrapper,
         Description,
+    Icon,
     ImageSneacker,
     Content,
     DescriptionSneackers,
