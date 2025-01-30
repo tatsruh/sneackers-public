@@ -1,19 +1,35 @@
-import {useParams} from "react-router-dom";
-import {S} from '../pages/_styles.ts'
-import {AdidasArray} from "../pages/Adidas.tsx";
+import {NavLink, useParams} from "react-router-dom";
+import {S} from '../pages/_styles.ts';
+import {adidasArray} from "../pages/Adidas.tsx";
+import {pumaArray} from "../pages/Puma.tsx";
+import {nikeArray} from "../pages/Nike.tsx"
+import {SneackerItem} from "../main/MainPage.tsx";
+
+type sneackersTypes = {
+    [key: string]: (SneackerItem[]),
+}
+const sneackers: sneackersTypes = {
+    adidas: adidasArray,
+    puma: pumaArray,
+    nike: nikeArray,
+}
 
 const Model = () => {
-    const params = useParams();
-    const model = params.id ?
-        AdidasArray.find((adida) => adida.id === Number(params.id)) : null;
+    const {model, id} = useParams();
+    const sneackerArray = model ? sneackers[model.toLowerCase()] : undefined;
+    const currentModel = sneackerArray?.find((item) => item.id === Number(id));
+
     return (
-        <div>
-            <h2>{model?.model}</h2>
-            <h3>{model?.collection}</h3>
-            <h4>{model?.price}</h4>
-            {model?.picture && <S.ImageSneacker src={model.picture} alt={model.model}/>}
-            {!model && <h2>Model Not Found</h2>}
-        </div>
+        <S.ModelContainer>
+            <h2>{currentModel?.model.toUpperCase()}</h2>
+            <h3>{currentModel?.collection}</h3>
+            <h3>{currentModel?.price}</h3>
+            {currentModel?.picture && <S.ImageSneacker src={currentModel.picture} alt={currentModel.model}/>}
+            {!currentModel && <>
+                <h2>Model Not Found</h2>
+                <NavLink to={`/${model}`}>Return to the main page</NavLink>
+            </>}
+        </S.ModelContainer>
     );
 };
 

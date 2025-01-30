@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <HeaderStyled>
             <ShopName>
-                Sneacker Shop
+                Sneackers Shop
             </ShopName>
             <span>Est 2012</span>
         </HeaderStyled>
