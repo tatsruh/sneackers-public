@@ -13,7 +13,9 @@ const Navbar = () => {
                 <S.NavWrapper><NavLink
                     to={PATH.NIKE}> Nike</NavLink></S.NavWrapper>
                 <S.NavWrapper><NavLink
-                    to={PATH.PRICE}>Prices</NavLink></S.NavWrapper></div>
+                    to={PATH.PRICE}>Prices</NavLink></S.NavWrapper>
+                <S.NavWrapper><NavLink
+                    to={PATH.PROTECTED}>Protected Page</NavLink></S.NavWrapper></div>
 
         </S.NavContainer>
     );
