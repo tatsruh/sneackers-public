@@ -3,7 +3,7 @@ import MainPage from "./layout/components/main/MainPage.tsx";
 import Header from "./layout/components/header/Header.tsx";
 import Footer from "./layout/components/footer/Footer.tsx";
 import {useState} from "react";
-import {Button, NavigateLink} from "./layout/components/button/Button.tsx";
+import {NavigateLink} from "./layout/components/button/Button.tsx";
 import styled from "styled-components";
 
 function App() {

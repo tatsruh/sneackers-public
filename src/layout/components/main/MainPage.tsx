@@ -7,10 +7,8 @@ import {S} from '../pages/_styles.ts'
 import Model from "../model/Model.tsx";
 import {Prices} from "../prices/Prices.tsx";
 import Navbar from "../navigation/Navbar.tsx";
-import {useState} from "react";
 import ProtectedPage from "../pages/ProtectedPage.tsx";
 import ProtectedRoute from "../pages/ProtectedRoute.tsx";
-import {Button, NavigateLink} from "../button/Button.tsx";
 
 export type SneackerItem = {
     model: string;
