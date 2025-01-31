@@ -1,7 +1,7 @@
 import {S} from "./_styles.ts";
-import pic1 from "../../../assets/AIR+FORCE+1+'07.webp";
-import pic2 from "../../../assets/AIR+MAX+PLUS.webp";
-import pic3 from "../../../assets/NIKE+DUNK+LOW+RETRO.webp";
+import pic1 from "/public/AIR+FORCE+1+'07.webp";
+import pic2 from "/public/AIR+MAX+PLUS.webp";
+import pic3 from "/public/NIKE+DUNK+LOW+RETRO.webp";
 import {SneackerItem} from "../main/MainPage.tsx";
 import {NavLink} from "react-router-dom";
 

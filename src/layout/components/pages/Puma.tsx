@@ -1,7 +1,7 @@
 import {S} from "./_styles.ts";
-import pic1 from "../../../assets/395205_21_sv01.webp";
-import pic2 from "../../../assets/Sneakersy-unisex-Palermo-ze-skóry.webp";
-import pic3 from "../../../assets/Sneakersy-Rebound.webp";
+import pic1 from "/public/395205_21_sv01.webp";
+import pic2 from "/public/Sneakersy-unisex-Palermo-ze-skóry.webp";
+import pic3 from "/public/Sneakersy-Rebound.webp";
 import {SneackerItem} from "../main/MainPage.tsx";
 import {NavLink} from "react-router-dom";
 
