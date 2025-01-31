@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/sneackers-public/", "destination": "/index.html" }
+    { "source": "/sneackers-public/**", "destination": "/index.html" }
   ]
 }
